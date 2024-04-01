@@ -1,0 +1,110 @@
+
+<div class="row justify-content-center">
+  <div class="col" *ngFor="let tempCard of cards">
+    <div class="card" style="width: 18rem">
+      <img [src]="tempCard.tempFood" class="card-img-top" alt="" />
+      <div class="card-body">
+        {{ convertToJalaliWithWeekday(tempCard.dateCreated) }}
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <select
+            class="form-select"
+            dir="rtl"
+            aria-label="Default select example"
+          >
+            <option dir="rtl" selected>نام گروه</option>
+            <option
+              dir="rtl"
+              *ngFor="let tempGroup of groups"
+              value="{{ tempGroup.groupName }}"
+            >
+              {{ tempGroup.groupName }}
+            </option>
+          </select>
+        </li>
+        <li class="list-group-item">
+          <select
+            #item
+            (change)="onSelected(item.value, tempCard)"
+            class="form-select"
+            aria-label="Default select example"
+          >
+            <option dir="rtl" selected>نوع غذا</option>
+            <option
+              *ngFor="let tempFood of foods"
+              dir="rtl"
+              value="{{ tempFood.foodName }}"
+            >
+              {{ tempFood.foodName }}
+            </option>
+          </select>
+        </li>
+      </ul>
+      <div class="card-body">
+        <button
+          type="button"
+          class="btn btn-outline-success"
+          style="
+            border-radius: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-right: 11px;
+            margin-bottom: 8px;
+          "
+        >
+          ثبت سفارش
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-warning"
+          style="
+            border-radius: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 8px;
+          "
+        >
+          ثبت تغییرات
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-danger"
+          style="border-radius: 30px; padding-left: 20px; padding-right: 20px"
+        >
+          حذف سفارش
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"></div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-9" style="padding-left: 8%; margin-top:25px">
+          <ngb-pagination [(page)] = "pageNumber"
+                          [pageSize]="pageSize"
+                          [maxSize]="5"
+                          [boundaryLinks]="true"
+                          [collectionSize]="totalElements"
+                          (pageChange)="listCard()"
+          >
+          </ngb-pagination>
+        </div>
+
+        <div class="col-md-3 mb-4" style="text-align:right;">
+          <span class="me-2">Page Size</span>
+          <select class="form-select"
+                  #pageSelectedItem
+                  (change)="updatePageSize(pageSelectedItem.value)">
+            <option selected="selected">8</option>
+            <option>12</option>
+            <option>20</option>
+            <option>50</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-report></app-report>

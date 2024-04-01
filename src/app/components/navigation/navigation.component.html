@@ -1,0 +1,84 @@
+<!-- navbar -->
+<header>
+  <div class="search-logo">
+    <a href="#" class="logo"
+      ><img src="./assets/images/logo.png" alt="logo"
+    /></a>
+    <app-search-box></app-search-box>
+    <!-- side bar -->
+  </div>
+  <div class="group">
+    <ul class="navigation">
+      <li>
+        <div class="toggle-side-bar">
+          <a
+            href="#"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+            ><i class="fa-solid fa-bars fa-lg"></i
+          ></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+<!-- side bar tags -->
+
+<div class="page-wrapper">
+  <div
+    class="offcanvas offcanvas-end side-bar-template"
+    tabindex="-1"
+    id="offcanvasRight"
+    aria-labelledby="offcanvasRightLabel"
+  >
+    <div class="offcanvas-header">
+      <img src="./assets/images/logo.png" class="logo-image" alt="" />
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="d-flex flex-column">
+        <button class="item-side-bar-btn" type="button">
+          <a class="item-side-bar-btn-link" routerLinkActive="active-link" routerLink="/home"> داشبورد </a>
+          <span class="first"></span>
+          <span class="second"></span>
+          <span class="third"></span>
+          <span class="fourth"></span>
+        </button>
+        <button
+          class="item-side-bar-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          type="button"
+        >
+          اضافه کردن غذا
+          <span class="first"></span>
+          <span class="second"></span>
+          <span class="third"></span>
+          <span class="fourth"></span>
+        </button>
+        <button class="item-side-bar-btn" type="button">
+          اضافه کردن گروه
+          <span class="first"></span>
+          <span class="second"></span>
+          <span class="third"></span>
+          <span class="fourth"></span>
+        </button>
+        <button class="item-side-bar-btn" type="button">
+          <a class="item-side-bar-btn-link" routerLink="/report">گزارش گیری</a>
+          <span class="first"></span>
+          <span class="second"></span>
+          <span class="third"></span>
+          <span class="fourth"></span>
+        </button>
+      </div>
+      <button class="item-side-bar-btn-danger" type="button">خارج شدن</button>
+    </div>
+  </div>
+</div>
