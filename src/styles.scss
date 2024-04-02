@@ -264,6 +264,9 @@ body {
   width: 25%;
   background: #ffa500;
 }
+.mat-mdc-dialog-container .mdc-dialog__surface{
+  border-radius: 30px !important;
+}
 
 .item-side-bar-btn:hover .fourth {
   top: 0;
