@@ -1,10 +1,10 @@
-<div class="rounded-5">
-  <div mat-dialog-title>
-    Employee Form
+
+  <div dir="rtl" mat-dialog-title>
+    فرم اضافه کردن روز
   </div>
   <form [formGroup]="cardForm" (ngSubmit)="onFormSubmit()">
-  <div mat-dialog-content>
-    <div class="col">
+  <div mat-dialog-content dir="rtl">
+
       <div style="width:100%">
         <ng-persian-datepicker
           [uiTheme]="customTheme"
@@ -13,21 +13,21 @@
           [timeEnable]="true"
           [uiHideAfterSelectDate]="true"
           [uiTodayBtnEnable]="false"
-          [dateFormat]="'YYYY/MM/DD       \'HH:mm:ss\''">
+          [dateFormat]="' تاریخ: YYYY/MM/DD  زمان: \'HH:mm:ss\''">
           <mat-form-field appearance="outline">
-            <mat-label>تاریخ</mat-label>
+            <mat-label>تاریخ و زمان اعتبار کارت</mat-label>
             <input dir="rtl" matInput type="text" formControlName="dateCreated" />
           </mat-form-field>
 
         </ng-persian-datepicker>
       </div>
 
-    </div>
+
 
   </div>
   <div mat-dialog-actions class="action">
-    <button mat-raised-button >Cancel</button>
-    <button mat-raised-button color="primary" type="submit">Save</button>
+    <button mat-raised-button >انصراف</button>
+    <button mat-raised-button color="primary" type="submit">ثبت درخواست</button>
   </div>
   </form>
-</div>
+
