@@ -24,7 +24,7 @@ export class CardFormComponent {
     });
   }
   onSelect(event: IActiveDate): void {
-    this.viaTimestampValue = new Date();
+    this.viaTimestampValue = new Date(event.timestamp);
     console.log(this.viaTimestampValue);
 
   }
@@ -64,7 +64,8 @@ export class CardFormComponent {
     if(this.cardForm.valid){
       const formData = this.cardForm.value;
       formData.dateCreated = this.viaTimestampValue;
-      formData.dateCreated = moment(this.viaTimestampValue).format('YYYY-MM-DD HH:mm:ss');
+      console.log(this.viaTimestampValue);
+      formData.dateCreated = moment(new Date(this.viaTimestampValue)).format('YYYY-MM-DD HH:mm:ss');
       console.log(this.cardForm.value);
       this._cardService.addCard(this.cardForm.value).subscribe({
         next:(val:any)=>{
