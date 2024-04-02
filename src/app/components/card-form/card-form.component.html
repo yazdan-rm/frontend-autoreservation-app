@@ -1,0 +1,33 @@
+<div class="rounded-5">
+  <div mat-dialog-title>
+    Employee Form
+  </div>
+  <form [formGroup]="cardForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content>
+    <div class="col">
+      <div style="width:100%">
+        <ng-persian-datepicker
+          [uiTheme]="customTheme"
+          (dateOnInit)="onInit($event)"
+          (dateOnSelect)="onSelect($event)"
+          [timeEnable]="true"
+          [uiHideAfterSelectDate]="true"
+          [uiTodayBtnEnable]="false"
+          [dateFormat]="'YYYY/MM/DD       \'HH:mm:ss\''">
+          <mat-form-field appearance="outline">
+            <mat-label>تاریخ</mat-label>
+            <input dir="rtl" matInput type="text" formControlName="dateCreated" />
+          </mat-form-field>
+
+        </ng-persian-datepicker>
+      </div>
+
+    </div>
+
+  </div>
+  <div mat-dialog-actions class="action">
+    <button mat-raised-button >Cancel</button>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+  </div>
+  </form>
+</div>

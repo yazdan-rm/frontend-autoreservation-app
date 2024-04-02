@@ -39,6 +39,7 @@ export class FoodListComponent implements OnInit {
     this.cardService
       .getCardListPagination(this.pageNumber - 1, this.pageSize)
       .subscribe((data) => {
+
         this.cards = data.content;
         this.pageNumber = data.pageNo + 1;
         this.pageSize = data.pageSize;
@@ -81,10 +82,10 @@ export class FoodListComponent implements OnInit {
   }
 
   convertToJalaliWithWeekday(miladiDate: Date): string {
-    const jalaliDate = moment(miladiDate).locale('fa');
+    const jalaliDate = moment(new Date(miladiDate)).locale('fa');
     const jalaliDay = jalaliDate.format('dddd');
     const jalaliDateNumber = jalaliDate.format('YYYY/MM/DD');
-    const jalaliDateString = jalaliDate.format('jYYYY/jMM/jDD dddd');
+    const jalaliDateString = jalaliDate.format('YYYY-MM-DD HH:mm:ss');
     console.log(
       moment
         .from(jalaliDateString, 'fa', 'dddd، jYYYY/jMM/jDD')
@@ -92,6 +93,6 @@ export class FoodListComponent implements OnInit {
         .toDate()
     );
 
-    return `${jalaliDateNumber} ${jalaliDay}`;
+    return `${jalaliDateString}`;
   }
 }

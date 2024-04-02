@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {window} from "rxjs";
+import {MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-navigation',
@@ -12,5 +13,6 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
 
 }

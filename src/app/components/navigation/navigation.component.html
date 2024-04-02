@@ -2,7 +2,7 @@
 <header>
   <div class="search-logo">
     <a href="#" class="logo"
-      ><img src="./assets/images/logo.png" alt="logo"
+    ><img src="./assets/images/logo.png" alt="logo"
     /></a>
     <app-search-box></app-search-box>
     <!-- side bar -->
@@ -17,7 +17,7 @@
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasRight"
             aria-controls="offcanvasRight"
-            ><i class="fa-solid fa-bars fa-lg"></i
+          ><i class="fa-solid fa-bars fa-lg"></i
           ></a>
         </div>
       </li>
@@ -34,7 +34,7 @@
     aria-labelledby="offcanvasRightLabel"
   >
     <div class="offcanvas-header">
-      <img src="./assets/images/logo.png" class="logo-image" alt="" />
+      <img src="./assets/images/logo.png" class="logo-image" alt=""/>
       <button
         type="button"
         class="btn-close"
@@ -45,7 +45,20 @@
     <div class="offcanvas-body">
       <div class="d-flex flex-column">
         <button class="item-side-bar-btn" type="button">
-          <a class="item-side-bar-btn-link" routerLinkActive="active-link" routerLink="/home"> داشبورد </a>
+          <a class="item-side-bar-btn-link"
+             data-bs-dismiss="offcanvas"
+             routerLinkActive="active-link"
+             routerLink="/home"> داشبورد </a>
+          <span class="first"></span>
+          <span class="second"></span>
+          <span class="third"></span>
+          <span class="fourth"></span>
+        </button>
+        <button data-bs-dismiss="offcanvas"
+                class="item-side-bar-btn"
+                routerLink="/card"
+                type="button">
+          اضافه کردن روز
           <span class="first"></span>
           <span class="second"></span>
           <span class="third"></span>
@@ -54,6 +67,7 @@
         <button
           class="item-side-bar-btn"
           data-bs-toggle="modal"
+          data-bs-dismiss="offcanvas"
           data-bs-target="#exampleModal"
           type="button"
         >
@@ -63,22 +77,29 @@
           <span class="third"></span>
           <span class="fourth"></span>
         </button>
-        <button class="item-side-bar-btn" type="button">
+        <button class="item-side-bar-btn"
+                data-bs-dismiss="offcanvas"
+                type="button">
           اضافه کردن گروه
           <span class="first"></span>
           <span class="second"></span>
           <span class="third"></span>
           <span class="fourth"></span>
         </button>
-        <button class="item-side-bar-btn" type="button">
-          <a class="item-side-bar-btn-link" routerLink="/report">گزارش گیری</a>
+        <button data-bs-dismiss="offcanvas"
+                class="item-side-bar-btn"
+                type="button">
+          <a class="item-side-bar-btn-link"
+             routerLink="/report">گزارش گیری</a>
           <span class="first"></span>
           <span class="second"></span>
           <span class="third"></span>
           <span class="fourth"></span>
         </button>
       </div>
-      <button class="item-side-bar-btn-danger" type="button">خارج شدن</button>
+      <button class="item-side-bar-btn-danger"
+              data-bs-dismiss="offcanvas"
+              type="button">خارج شدن</button>
     </div>
   </div>
 </div>

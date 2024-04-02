@@ -13,8 +13,12 @@ export class CardService {
   getCardListPagination(page:number,
                         pageSize:number): Observable<GetResponse> {
     const paginationUrl:string = `${this.cardUrl}?pageNo=${page}&pageSize=${pageSize}`;
-
+    console.log(this.httpClient.get<GetResponse>(paginationUrl))
     return this.httpClient.get<GetResponse>(paginationUrl);
+  }
+
+  addCard(data: any ): Observable<any> {
+    return this.httpClient.post("http://localhost:9090/api/cards", data);
   }
 }
 
