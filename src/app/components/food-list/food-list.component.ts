@@ -85,7 +85,8 @@ export class FoodListComponent implements OnInit {
     const jalaliDate = moment(new Date(miladiDate)).locale('fa');
     const jalaliDay = jalaliDate.format('dddd');
     const jalaliDateNumber = jalaliDate.format('YYYY/MM/DD');
-    const jalaliDateString = jalaliDate.format('YYYY-MM-DD HH:mm:ss');
+    const jalaliDateString = jalaliDate.format('HH:mm:ss');
+    const jalaliDateTimeString = jalaliDate.format('YYYY/MM/DD dddd HH:mm:ss');
     console.log(
       moment
         .from(jalaliDateString, 'fa', 'dddd، jYYYY/jMM/jDD')
@@ -93,6 +94,6 @@ export class FoodListComponent implements OnInit {
         .toDate()
     );
 
-    return `${jalaliDateString}`;
+    return `تاریخ: ${jalaliDateNumber}  ${jalaliDay}   زمان: ${jalaliDateString}`;
   }
 }
