@@ -24,7 +24,9 @@ import {MatInput} from "@angular/material/input";
 import {MatInputModule} from '@angular/material/input';
 import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginator} from "@angular/material/paginator";
+import {MatSort, MatSortModule} from "@angular/material/sort";
 
 
 
@@ -62,7 +64,10 @@ const routes: Routes = [
     MatInputModule,
     MatFormFieldModule,
     NgPersianDatepickerModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatPaginator,
+    MatSortModule
   ],
   providers: [FoodService, GroupService, CardService, provideAnimationsAsync()],
   bootstrap: [AppComponent]

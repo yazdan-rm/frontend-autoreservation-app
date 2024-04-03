@@ -6,6 +6,27 @@
   display: flex;
 }
 
-.mat-toolbar .mat-mdc-button-base.mat-mdc-button-base.mat-unthemed{
-  border-radius: 30px;
+
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+$orangeColor:#ffa500;
+
+th {
+  background-color: $orangeColor !important;
+}
+
+td{
+  text-align: center!important;
+}
+
+.mat-mdc-paginator {
+  display: block;
+  border-radius: 0 0 20px 20px;
 }

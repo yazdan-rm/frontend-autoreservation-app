@@ -36,6 +36,7 @@ export class FoodListComponent implements OnInit {
   }
 
   listCard() {
+
     this.cardService
       .getCardListPagination(this.pageNumber - 1, this.pageSize)
       .subscribe((data) => {

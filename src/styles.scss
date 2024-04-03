@@ -30,22 +30,7 @@ $frontend-autoreservation-app-theme: mat.define-light-theme((
   ),
   density: 0
 ));
-/* BEGIN Bold */
-@font-face {
-  font-family: 'IranianSansBold';
-  src: url('assets/fonts/IranianSansBold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-/* END Bold */
-/* BEGIN Regular */
-@font-face {
-  font-family: 'IranianSans';
-  src: url('assets/fonts/IranianSansRegular.ttf') format('truetype'),
-  url('assets/fonts/IRANSans-web.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+
 *{
   font-family:'Vazir', sans-serif ;
 }
@@ -264,6 +249,26 @@ body {
   width: 25%;
   background: #ffa500;
 }
+.mat-sort-header-container {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  letter-spacing: normal;
+  outline: 0;
+  justify-content: center!important;
+  font-weight: bold;
+  margin-top: 0 ;
+
+}
+
+
+[dir=rtl] .mat-mdc-text-field-wrapper {
+  padding-left: 16px;
+  border-radius: 20px 20px 0 0!important;
+  padding-right: 16px;
+}
+
+
 .mat-mdc-dialog-container .mdc-dialog__surface{
   border-radius: 30px !important;
 }

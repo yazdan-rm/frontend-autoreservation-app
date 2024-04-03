@@ -8,17 +8,32 @@ import { Card } from '../common/card';
 })
 export class CardService {
   private cardUrl = 'http://localhost:9090/api/cards';
-  constructor(private httpClient: HttpClient) {}
+  constructor(private _httpClient: HttpClient) {}
+
+  getAllCards():Observable<Card[]>{
+    return this._httpClient.get<GetResponse>(this.cardUrl).pipe(
+      map(data => data.content)
+    );
+  }
 
   getCardListPagination(page:number,
                         pageSize:number): Observable<GetResponse> {
-    const paginationUrl:string = `${this.cardUrl}?pageNo=${page}&pageSize=${pageSize}`;
-    console.log(this.httpClient.get<GetResponse>(paginationUrl))
-    return this.httpClient.get<GetResponse>(paginationUrl);
+    const paginationUrl:string = `${this.cardUrl}?pageNo=${page}&pageSize=${pageSize}&sortBy=id`;
+    return this._httpClient.get<GetResponse>(paginationUrl);
   }
 
   addCard(data: any ): Observable<any> {
-    return this.httpClient.post("http://localhost:9090/api/cards", data);
+    return this._httpClient.post("http://localhost:9090/api/cards", data);
+  }
+
+  updateCard(id:number, data: any ): Observable<any> {
+    console.log(data);
+    return this._httpClient.put(`http://localhost:9090/api/cards/${id}`, data);
+  }
+
+
+  deleteCard(id:number): Observable<any>{
+    return this._httpClient.delete(`http://localhost:9090/api/cards/${id}`);
   }
 }
 

@@ -1,33 +1,29 @@
-
-  <div dir="rtl" mat-dialog-title>
-    فرم اضافه کردن روز
-  </div>
-  <form [formGroup]="cardForm" (ngSubmit)="onFormSubmit()">
+<div dir="rtl" mat-dialog-title>
+  فرم اضافه کردن روز
+</div>
+<form [formGroup]="cardForm" (ngSubmit)="onFormSubmit()">
   <div mat-dialog-content dir="rtl">
 
-      <div style="width:100%">
-        <ng-persian-datepicker
-          [uiTheme]="customTheme"
-          (dateOnInit)="onInit($event)"
-          (dateOnSelect)="onSelect($event)"
-          [timeEnable]="true"
-          [uiHideAfterSelectDate]="true"
-          [uiTodayBtnEnable]="false"
-          [dateFormat]="' تاریخ: YYYY/MM/DD  زمان: \'HH:mm:ss\''">
-          <mat-form-field appearance="outline">
-            <mat-label>تاریخ و زمان اعتبار کارت</mat-label>
-            <input dir="rtl" matInput type="text" formControlName="dateCreated" />
-          </mat-form-field>
+    <div style="width:100%">
+      <ng-persian-datepicker
+        [uiTheme]="customTheme"
+        (dateOnInit)="onInit($event)"
+        (dateOnSelect)="onSelect($event)"
+        [timeEnable]="true"
+        [uiHideAfterSelectDate]="true"
+        [uiTodayBtnEnable]="false"
+        [dateFormat]="' تاریخ: YYYY/MM/DD  زمان: \'HH:mm:ss\''">
+        <mat-form-field appearance="outline">
+          <mat-label>تاریخ و زمان اعتبار کارت</mat-label>
+          <input dir="rtl" matInput type="text" formControlName="dateCreated"/>
+        </mat-form-field>
 
-        </ng-persian-datepicker>
-      </div>
-
-
-
+      </ng-persian-datepicker>
+    </div>
   </div>
   <div mat-dialog-actions class="action">
-    <button mat-raised-button >انصراف</button>
-    <button mat-raised-button color="primary" type="submit">ثبت درخواست</button>
+    <button mat-raised-button type="button" [mat-dialog-close]='false'>انصراف</button>
+    <button mat-raised-button color="primary" type="submit">{{data ?'اعمال تغییرات':'ثبت درخواست جدید'}}</button>
   </div>
-  </form>
+</form>
 
