@@ -7,6 +7,7 @@ import {MatSort} from "@angular/material/sort";
 import {CardService} from "../../services/card.service";
 import {Card} from "../../common/card";
 import moment from "jalali-moment";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-card-add-edit',
@@ -29,7 +30,8 @@ export class CardAddEditComponent implements OnInit {
 
 
   constructor(private _dialog: MatDialog,
-              private _cardService: CardService) {
+              private _cardService: CardService,
+              private toastr : ToastrService) {
   }
 
   ngOnInit(): void {
@@ -114,7 +116,7 @@ export class CardAddEditComponent implements OnInit {
     if(confirm("آیا اطمینان دارید؟")){
       this._cardService.deleteCard(id).subscribe({
         next: () => {
-          alert('آیتم با موفقیت حذف شد');
+          this.toastr.success('آیتم با موفقیت حذف شد','عملبات موفق')
           this.getCardList();
         },
         error: console.error

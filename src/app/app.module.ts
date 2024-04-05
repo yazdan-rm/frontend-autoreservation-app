@@ -27,6 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort, MatSortModule} from "@angular/material/sort";
+import {ToastrModule} from "ngx-toastr";
 
 
 
@@ -67,7 +68,13 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatTableModule,
     MatPaginator,
-    MatSortModule
+    MatSortModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+      progressBar: true,
+      timeOut:4000
+    }),
   ],
   providers: [FoodService, GroupService, CardService, provideAnimationsAsync()],
   bootstrap: [AppComponent]
