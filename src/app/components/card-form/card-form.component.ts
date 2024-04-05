@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {IActiveDate, IDatepickerTheme} from "ng-persian-datepicker";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {CardService} from "../../services/card.service";
 import moment from "jalali-moment";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
@@ -54,7 +54,7 @@ export class CardFormComponent implements OnInit {
   ) {
     this.cardForm = this._fb.group({
       id: -1,
-      dateCreated: '',
+      dateCreated: this._fb.control('', Validators.required),
       dateUpdated: ''
     });
 

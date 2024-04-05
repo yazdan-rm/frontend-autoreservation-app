@@ -28,6 +28,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort, MatSortModule} from "@angular/material/sort";
 import {ToastrModule} from "ngx-toastr";
+import {MatMenuModule} from "@angular/material/menu";
 
 
 
@@ -67,6 +68,7 @@ const routes: Routes = [
     NgPersianDatepickerModule,
     ReactiveFormsModule,
     MatTableModule,
+    MatMenuModule,
     MatPaginator,
     MatSortModule,
     ToastrModule.forRoot({

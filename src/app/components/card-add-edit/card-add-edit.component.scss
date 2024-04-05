@@ -7,8 +7,12 @@
 }
 
 
+
+
 table {
   width: 100%;
+  box-shadow: rgba(255, 255, 255, 0.39) 0px 54px 55px, rgba(255, 255, 255, 0.18) 0px -12px 30px, rgba(255, 255, 255, 0.2) 0px 4px 6px, rgba(255, 255, 255, 0.22) 0px 12px 13px, rgba(255, 255, 255, 0.43) 0px -3px 5px;
+  overflow: hidden;
 }
 
 .mat-mdc-form-field {
@@ -30,3 +34,4 @@ td{
   display: block;
   border-radius: 0 0 20px 20px;
 }
+
